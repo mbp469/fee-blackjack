@@ -1,7 +1,7 @@
 function runGame() {
     var display = document.getElementById('cards');
     var allCards = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
-    var myCards = [generateRandomCard(),generateRandomCard()]; //variable to store my hand. initialize with two cards.
+    var myCards = [generateRandomCard(), generateRandomCard()]; //variable to store my hand. initialize with two cards.
 
     /* this links the stand button to checkResult() function */
     document.getElementById('stand').addEventListener('click', function() {
@@ -39,10 +39,10 @@ function runGame() {
     }
     /* this traverses the myCards array and appends a div with the value for each item in the array */
     function displayCards() {
-      var displayString = "";
-      for (var index in myCards) {
-        displayString = displayString + ' ' + myCards[index];
-      }
+        var displayString = "";
+        for (var index in myCards) {
+            displayString = displayString + ' ' + myCards[index];
+        }
         display.innerHTML = displayString;
     }
     /* hit() generates a random card and pushes it to the myCards array.*/
@@ -54,7 +54,7 @@ function runGame() {
     /* go through array and see how many aces there are */
     function countAces() {
         var numberOfAces = 0;
-        for(var index in myCards) {
+        for (var index in myCards) {
             if (myCards[index] === 'A') {
                 numberOfAces += 1;
             }
@@ -70,7 +70,7 @@ function runGame() {
         /* this is the set of logic that determines if the value of the cards in myCards is a winner or loser this turn. */
         while (points > 21 && aces > 0) {
             points -= 10;
-            aces-=1;
+            aces -= 1;
             console.log("aces in checkResult: " + aces);
             console.log("points in checkResult: " + points);
         }
