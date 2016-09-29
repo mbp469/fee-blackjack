@@ -71,8 +71,6 @@ function runGame() {
         while (points > 21 && aces > 0) {
             points -= 10;
             aces -= 1;
-            console.log("aces in checkResult: " + aces);
-            console.log("points in checkResult: " + points);
         }
         if (points > 21) {
             alert("You Bust. You had " + points + " points.");
